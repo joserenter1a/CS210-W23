@@ -8,10 +8,10 @@ Author: Jose Renteria
 
 # Iterables
 def iter_str(s: str):
-    for char in enumerate(s):  # enumerate will return an (index, value) tuple,
+    for char in enumerate(s):  # enumerate will return an (index, value)    (0, 1)   tuple,
         print(char)  # useful to see which iteration falls on which index, can index into the tuple
-    # print(char[0])
-    # print(char[1])
+        # print(char[0]) accesses the index
+        # print(char[1]) accesses the value
 
 
 iter_str("string")
@@ -39,7 +39,8 @@ print("+---------Alternatively-----------+\n")
 
 def iter_list_alt(l: list):
     for el in range(len(l)):
-        print(el)
+        print(el)  # accesses the indexes
+        # print(l[e]) # access the value using the index
 
 
 iter_list_alt(ints)
@@ -60,6 +61,8 @@ Let's put it to the test
 
 def sum_to_num(n: int) -> int:
     """
+
+
     Sum every single number up to our input n
     Start at some sum 0
     (0 + 1) + 2 + 3 + 4 + 5 + 6
@@ -71,14 +74,21 @@ def sum_to_num(n: int) -> int:
     21
     Notice how tedious this is, we can use a loop to get it done faster
     """
-    # TODO
+    sum = 0
+    for i in range(n + 1):  # include the last value
+        sum += i  # update your sum variable with your iteration variable
+    return sum
 
 
 def equality_counter(values: list, check: int) -> int:
     """
     Determine how many values in our list are equal to a specified value
     """
-    # TODO
+    count = 0  # initialize counter
+    for el in values:  # iterate through the values list directly
+        if el == check:  # if the current iteration matche the value you're checking
+            count += 1  # increment the counter
+    return count
 
 
 # Error Messages
@@ -89,19 +99,18 @@ How to fix them
 
 """
 
-"""def read_element(iterable: list, i: int):
+
+def read_element(iterable: list, i: int):
     element = iterable[i]
-    return element[i]
-"""
+    return element
+
 
 if __name__ == '__main__':
-    """
-    assert sum_to_num(6) == 21, 'Assertion Error: incorrect sum'
     print(sum_to_num(6))
+    assert (sum_to_num(6) == 21)
 
-    values = [1, 3, 3, 3, 3, 4, 5]
-    assert equality_counter(values, 3) == 4, 'Assertion Error: incorrect count'
+    values = [1, 2, 3, 3, 3, 3, 4, 5]
     print(equality_counter(values, 3))
+    assert (equality_counter(values, 3) == 4)
 
-    print(read_element([1, 2, 3], 1)) 
-    """
+    print(read_element([1, 2, 3], 1))
