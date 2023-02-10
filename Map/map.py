@@ -8,6 +8,7 @@ Also observing usage of Map
 Map function takes a function and an iterable as input:
 
             Map(function*, iterable)
+            square, container
 
 and returns an object that can be iterated over. (AKA an ITERABLE TYPE)
 
@@ -36,6 +37,9 @@ def vector_dilate(vector: list, scalar: int):
 
     """
     # TODO
+    def scale(x: int):
+        return x * scalar
+    return list(map(scale, vector))
 
 class test_case(unittest.TestCase):
     def test_dilate_two(self):
