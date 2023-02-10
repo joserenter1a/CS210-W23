@@ -35,8 +35,9 @@ def vector_dilate(vector: list, scalar: int):
     3
 
     """
-    # TODO
-
+    def scale(x):
+        return x * scalar
+    return list(map(scale, vector))
 
 class test_case(unittest.TestCase):
     def test_dilate_two(self):
