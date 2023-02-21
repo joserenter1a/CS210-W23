@@ -46,5 +46,5 @@ def remove_duplicates(string):
     # Return the accumulated string with duplicates removed
     return unique
 
-with open("sample.txt", 'r') as sample:
-    print(sample.readlines())
+with open("sample1.txt", 'x') as f:
+    f.write("this is a new file")
