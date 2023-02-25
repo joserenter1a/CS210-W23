@@ -7,10 +7,18 @@ Practice with dictionaries and File I/O.
 """
 # We can initialize a dict like this, similar to JSON notation
 mustang = {
+<<<<<<< HEAD
+
+=======
+>>>>>>> d4320c8a907087dbb9fac4a46143edc476f56572
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964,
   'mileage': 89_000
+<<<<<<< HEAD
+
+=======
+>>>>>>> d4320c8a907087dbb9fac4a46143edc476f56572
 }
 
 # But in Python, dictionaries cannot store duplicates on a single key, for example:
@@ -22,6 +30,7 @@ print(mustang)
 
 # but lets say you are an auto dealer, you obviously carry more than one model
 # lets say you also have a F150 and a Bronco currently
+<<<<<<< HEAD
 
 F150 = {
   "brand": "Ford",
@@ -37,6 +46,23 @@ Bronco = {
   "mileage": 1220
 }
 
+=======
+
+F150 = {
+  "brand": "Ford",
+  "model": "F150",
+  "year": 2009,
+  "mileage": 100_029
+}
+
+Bronco = {
+  "brand": "Ford",
+  "model": "Bronco",
+  "year": 2023,
+  "mileage": 1220
+}
+
+>>>>>>> d4320c8a907087dbb9fac4a46143edc476f56572
 models = [mustang, F150, Bronco] # These are the current models offered
 lot = {}                         # initialize an empty lot
 key = 'Current Models Available' # what we want our key to be
@@ -63,6 +89,30 @@ import csv  # import our csv module
 student_dict = {} # Initialize an empty dict
 
 with open('names.csv', 'r') as csv_file:  # we use 'with' so it can handle opening and closing the file
+<<<<<<< HEAD
+    pass
+    # TODO
+
+    csv_reader = csv.reader(csv_file)
+    # assign the reader object, with your file passed into it, to a var called 'csv_reader'
+    # skips onto the next iteration in the object i.e. line 2 if starting at line 1
+    next(csv_reader)
+    # iterate over your object, your csv_reader is a collection of lines aka an ITERABLE
+    # (name, age, standing) == (0, 1, 2)
+
+    for line in csv_reader:
+        name, age, standing = line
+    # initialize all our variables in each line, read the file to know what they are
+    # if the key exists
+        if standing in student_dict:
+            student_dict[standing].append((name, int(age)))
+        else:
+            student_dict[standing] = [(name, int(age))]
+    # add it to the list with the key
+    # create a key and assign it the first value
+
+    print((student_dict.keys()))
+=======
     pass # Delete when you start writing
     # TODO
     # assign the reader object, with your file passed into it, to a var called 'csv_reader'
@@ -77,3 +127,4 @@ with open('names.csv', 'r') as csv_file:  # we use 'with' so it can handle openi
 
     #print((new_dict)) # entire dictionary
     #print(new_dict.keys())  # all the keys
+>>>>>>> d4320c8a907087dbb9fac4a46143edc476f56572
