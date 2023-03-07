@@ -61,6 +61,7 @@ def remove_duplicates(string):
     # Return the accumulated string with duplicates removed
     return unique
 
+<<<<<<< HEAD
 
 with open("sample.txt", 'r') as sample:
     print(sample.read(2))  # first two characters only
@@ -74,3 +75,7 @@ s = "1234"
 print(s, type(s))
 s = (s)
 print(type(s))
+=======
+with open("sample1.txt", 'x') as f:
+    f.write("this is a new file")
+>>>>>>> d4320c8a907087dbb9fac4a46143edc476f56572

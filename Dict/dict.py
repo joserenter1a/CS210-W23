@@ -7,13 +7,18 @@ Practice with dictionaries and File I/O.
 """
 # We can initialize a dict like this, similar to JSON notation
 mustang = {
-
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964,
   'mileage': 89_000
-
 }
+# Iterable types
+# things that can be iterated over, containers, store multiple values, that you can access later
+# dict, lists, tuples, sets, csv.reader, File
+
+car = {"mustang": [2010, 2011, 2012]}
+
+# O(1)
 
 # But in Python, dictionaries cannot store duplicates on a single key, for example:
 mustang['model'] = 'F150' # this will overwrite the model
@@ -24,6 +29,7 @@ print(mustang)
 
 # but lets say you are an auto dealer, you obviously carry more than one model
 # lets say you also have a F150 and a Bronco currently
+
 
 F150 = {
   "brand": "Ford",
@@ -38,7 +44,6 @@ Bronco = {
   "year": 2023,
   "mileage": 1220
 }
-
 models = [mustang, F150, Bronco] # These are the current models offered
 lot = {}                         # initialize an empty lot
 key = 'Current Models Available' # what we want our key to be
@@ -65,8 +70,6 @@ import csv  # import our csv module
 student_dict = {} # Initialize an empty dict
 
 with open('names.csv', 'r') as csv_file:  # we use 'with' so it can handle opening and closing the file
-    pass
-    # TODO
 
     csv_reader = csv.reader(csv_file)
     # assign the reader object, with your file passed into it, to a var called 'csv_reader'
@@ -82,8 +85,8 @@ with open('names.csv', 'r') as csv_file:  # we use 'with' so it can handle openi
         if standing in student_dict:
             student_dict[standing].append((name, int(age)))
         else:
-            student_dict[standing] = [(name, int(age))]
+            # standing would be Senior
+            student_dict[standing] = [name, int(age)]
     # add it to the list with the key
     # create a key and assign it the first value
-
     print((student_dict.keys()))
