@@ -4,8 +4,8 @@ CS210-W23
 Author: Jose Renteria
 """
 import time
-import random
 import matplotlib.pyplot as plt
+import secrets
 
 
 # simple linear search, you have all seen this style
@@ -75,6 +75,6 @@ if __name__ == '__main__':
     # Create a sorted list of 10,000 integers
     arr = list(range(10000))
     # Generate a random target value
-    target = random.randint(0, 9999)
+    target = secrets.SystemRandom().randint(0, 9999)
 
     visualize(arr, target)
